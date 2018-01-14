@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JFS.Libs.Utils.K2", "JFS.Li
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JFS.Libs.Utils.Redis", "JFS.Libs.Utils.Redis\JFS.Libs.Utils.Redis.csproj", "{6D0E8878-832B-4AB8-A427-8D3D5C5D0BB7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{A71BF658-0510-4794-8AB7-DD42EBB2F56E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTest", "UnitTest", "{A61004F6-FC69-4A3A-9A03-80B98E3B32D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JFS.Libs.Redis.UnitTest", "JFS.Libs.Redis.UnitTest\JFS.Libs.Redis.UnitTest.csproj", "{AECD638F-C21A-43F8-8EB1-A38351905480}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,9 +33,19 @@ Global
 		{6D0E8878-832B-4AB8-A427-8D3D5C5D0BB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D0E8878-832B-4AB8-A427-8D3D5C5D0BB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D0E8878-832B-4AB8-A427-8D3D5C5D0BB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AECD638F-C21A-43F8-8EB1-A38351905480}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AECD638F-C21A-43F8-8EB1-A38351905480}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AECD638F-C21A-43F8-8EB1-A38351905480}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AECD638F-C21A-43F8-8EB1-A38351905480}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7825533C-9AB3-4B9E-B24E-8E4A849DEAC4} = {A71BF658-0510-4794-8AB7-DD42EBB2F56E}
+		{93DB99CC-915B-411F-A90D-70DA572BAB27} = {A71BF658-0510-4794-8AB7-DD42EBB2F56E}
+		{6D0E8878-832B-4AB8-A427-8D3D5C5D0BB7} = {A71BF658-0510-4794-8AB7-DD42EBB2F56E}
+		{AECD638F-C21A-43F8-8EB1-A38351905480} = {A61004F6-FC69-4A3A-9A03-80B98E3B32D4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9986B3D3-6FFA-47C3-B360-2B582863F4D6}

@@ -6,3 +6,5 @@
 /JFS.Libs.Utils.K2/obj/Debug
 /JFS.Libs.Utils.Redis/obj/Debug
 /.vs
+/JFS.Libs.Redis.UnitTest/obj
+/packages
