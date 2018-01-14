@@ -3,3 +3,6 @@
 ################################################################################
 
 /JFS.Libs/obj/Debug
+/JFS.Libs.Utils.K2/obj/Debug
+/JFS.Libs.Utils.Redis/obj/Debug
+/.vs
