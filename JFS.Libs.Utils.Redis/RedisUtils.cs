@@ -220,9 +220,10 @@ namespace JFS.Libs.Utils.Redis
             this.RedisDB.StringSet(key, value != default(T) ? Newtonsoft.Json.JsonConvert.SerializeObject(value) : string.Empty, expiredIn);
 
             return value;
-        } 
+        }
         #endregion
 
+        #region "Methods: SGet / SSet"
         string SSet(string key, string value)
         {
             if (!string.IsNullOrWhiteSpace(key))
@@ -242,6 +243,45 @@ namespace JFS.Libs.Utils.Redis
 
             return value;
         }
+        #endregion
+
+        #region "Methods: Pub / Sub"
+        long IRedisUtils.Pub(string channel, string msg)
+        {
+            if (string.IsNullOrWhiteSpace(channel) || string.IsNullOrWhiteSpace(msg))
+            {
+                return 0;
+            }
+
+            return this.RedisDB.Publish(channel, msg);
+        }
+
+        long IRedisUtils.Pub<T>(string channel, T msg)
+        {
+            if (string.IsNullOrWhiteSpace(channel))
+            {
+                return 0;
+            }
+
+            return this.RedisDB.Publish(channel, msg.ToString());
+        }
+
+        long IRedisUtils.PubObject<T>(string channel, T msg)
+        {
+            if (string.IsNullOrWhiteSpace(channel) || msg == null)
+            {
+                return 0;
+            }
+
+            return this.RedisDB.Publish(channel, Newtonsoft.Json.JsonConvert.SerializeObject(msg));
+        }
+
+        void IRedisUtils.Sub(string channel)
+        {           
+            throw new NotImplementedException();
+        } 
+        #endregion
+
         #endregion
 
         #region "Common Utils"
@@ -266,7 +306,7 @@ namespace JFS.Libs.Utils.Redis
             }
 
             return options;
-        }         
+        }        
         #endregion
     }
 }

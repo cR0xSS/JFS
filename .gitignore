@@ -8,3 +8,4 @@
 /.vs
 /JFS.Libs.Redis.UnitTest/obj
 /packages
+/JFS.Libs.Utils.Redis/bin/Debug

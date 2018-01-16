@@ -24,14 +24,37 @@ namespace JFS.Libs.Utils.Redis.Interfaces
         /// <param name="expiredIn"></param>
         void Expire(string key, TimeSpan? expiredIn = null);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="expiredAt"></param>
         void Expire(string key, DateTime? expiredAt = null);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="keys"></param>
+        /// <param name="expiredIn"></param>
         void Expire(IEnumerable<string> keys, TimeSpan? expiredIn = null);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="keys"></param>
+        /// <param name="expiredAt"></param>
         void Expire(IEnumerable<string> keys, DateTime? expiredAt = null);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key"></param>
         void Persist(string key);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="keys"></param>
         void Persist(IEnumerable<string> keys);
         #endregion
 
@@ -86,7 +109,17 @@ namespace JFS.Libs.Utils.Redis.Interfaces
         /// <param name="value"></param>
         /// <param name="expiredIn"></param>
         /// <returns></returns>
-        T SetObject<T>(string key, T value, TimeSpan? expiredIn = null) where T : class; 
+        T SetObject<T>(string key, T value, TimeSpan? expiredIn = null) where T : class;
+        #endregion
+
+        #region "Pub / Sub"
+        long Pub(string channel, string msg);
+
+        long Pub<T>(string channel, T msg) where T : struct;
+
+        long PubObject<T>(string channel, T msg) where T : class;
+
+        void Sub(string channel);
         #endregion
     }
 }
